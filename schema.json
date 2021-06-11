@@ -293,7 +293,8 @@
          "name":"url_arrete",
          "description":"Lien de l'arrêté administratif",
          "example":"https://cdn.paris.fr/paris/2021/05/28/23fb2b69cfa451a4e517f1bc6e3001b7.pdf",
-         "type":"uri",
+         "type":"string",
+         "format": "uri",
          "constraints":{
             "required":false
          }
@@ -302,7 +303,8 @@
          "name":"url_site_information",
          "description":"Page web décrivant le dispositif",
          "example":"https://www.metropolegrandparis.fr/fr/ZFE",
-         "type":"uri",
+         "type":"string",
+         "format": "uri",
          "constraints":{
                "required":false
          }
