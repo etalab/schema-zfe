@@ -1,21 +1,76 @@
-# Template de départ pour Table Schema
+# Schéma de données pour le Zones à Faibles Emissions - Table des règles
 
-Ce dépôt contient les fichiers nécessaires pour démarrer la création d'un dépôt pour un schéma [Table Schema](https://specs.frictionlessdata.io/table-schema/).
+Schéma des Zones à Faibles Emissions. Ce schéma permet de modéliser les règles de circulation associées à ensemble de tronçons routiers décrits dans les données sous le format "Zones à Faibles Emission - Tronçons routiers".   
 
-## Utiliser ce template
+## Contexte
 
-- Si vous créez votre dépôt sur GitHub, il vous suffit d'appuyer sur le bouton vert "Use this template". Consultez [la documentation](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template) pour plus d'infos ;
-- Si votre projet sera hébergé ailleurs (par exemple Gitlab), vous pouvez cloner ce répertoire ou télécharger les fichiers correspondants. Utilisez le bouton "Clone or download".
+Dans le cadre des travaux de l’équipe du Point d’accès national et de la mise en oeuvre de l’ouverture des données pour améliorer l’information dont disposent les voyageurs, l’équipe de transport.data.gouv.fr propose une solution simple et structurée pour l’ouverture des données concernant les Zones à Faibles Emissions : la Base Nationale des Zones à Faibles Emissions (BNZFE). 
 
-## Fichiers disponibles
+Le schéma de la base de données a été co-construit avec des associations et entrperises du secteur du stationnement cyclable, les producteurs de données et les réutilisateurs. Deux ateliers ouverts (le 25/11/2020 et le 24/02/2021) ont permis sa production. (Il a été établi après une enquête et plusieurs réunions du groupe de travail). Aujourd’hui disponible en version 0.1.0, il sera mis-à-jour régulièrement.
+
+## Cadre juridique
+
+L’ouverture des données sur les Zones à Faibles Emissions est une obligation légale, définie par la Loi pour une République Numérique (n° 2016-1321 du 7 octobre 2016) concernant la mise à disposition par défaut des données administratives. 
+
+## Finalité
+
+Afin de faciliter l’intégration des informations relatives aux Zones à Faibles Emission dans des applications de mobilité, un schéma de données a été défini afin d’assurer une harmonisation de ces données sur l’ensemble du territoire. Ce schéma définit des informations indispensables et complémentaires à fournir par le producteur. Cette distinction a été mise en place pour ne pas pénaliser les petits producteurs de données, et définit un standard minimal de complétude des données. Il est toutefois demandé aux producteurs de données de compléter le schéma avec le plus grand niveau de détail possible, afin de transmettre une information plus riche à l’usager final.
+La base présente plusieurs cas d’usage :
+Elle recense l'ensemble des Zones à Faibles Emission du territoire français en permettant à des services de calcul d’itinéraire d’intégrer ces données pour indiquer aux automobilistes s'ils peuvent circuler ou non sur certains tronçons routiers. Ces données peuvent également être utilisés par observatoires nationaux ou européens de l'implémentation de ce dispositif visant à améliorer la qualité de l'air des noeuds urbains.
+La talbe des règles comprend notamment : 
+- l'identifiant d'une catégorie de règle relative à un ensemble de tronçons routiers ;
+- la date de mise en place du dispositif et la date à laquelle la règlementation prend fin
+- la catégorie de conducteurs concernée par le dispositif (personne morale et/ou physique)
+- les vignettes CRITAIR autorisées par type de véhicule (véhicule particuliers, utiliraires, poids lourds, autobus, deux roues, taxis...)
+- les horaires d'application par type de véhicules (véhicule particuliers, utiliraires, poids lourds, autobus, deux roues, taxis...)
+- l'arrêté associé ;
+- le site d'information associé à la réglementation.
+
+
+## Format de fichier
+
+Les jeux de données seront publiées au format CSV encodé en UTF8 avec séparateur "," et en utilisant des " " pour les champs textuels qui pourraient contenir le séparateur. Certains champs sont obligatoires et d'autres optionnels. Les champs obligatoires doivent être complétés. Les champs optionnels peuvent être vides si la donnée n’est pas disponible. La colonne doit toutefois être présente.
+Ce jeu de données sera utilisé en combinaison avec le fichier contenant les géométrie des tronçons routiers concernés par la ZFE.
+
+## Publication
+
+Dans le but de maintenir à jour un répertoire consolidé des Zones à Faibles Emissions en France, les collectivités sont invitées à transmettre systématiquement les données relatives aux ZFE sur leur territoire. 
+Elles peuvent ajouter le mot-clef "zone-faibles-emissions" ou "zfe" lors de la publication du jeu de données dans leur espace de publication (portail local ou régional) ou directement sur data.gouv.fr.
+Les producteurs pourront :
+- publier directement sur data.gouv.fr ;
+- publier sur un portail local ou régional et s'assurer que les données publiées sont bien moissonnées et référencées sur data.gouv.fr.
+
+Nous préconisons aux producteurs de données de publier leurs fichiers avec la règle de nommage suivante : zfe_regles_nom.csv avec nom étant le nom de la collectivité productrice des données, par exemple zfe_regles_grenoble.csv
+
+En cas de mise à jour d’un fichier déjà intégré à la base consolidée, il est recommandé de prévenir l’équipe transport.data.gouv.fr qui s’assurera de l'actualisation du fichier en question et de son intégration dans la base consolidée.
+
+## Consolidation
+
+Le base nationale des ZFE sera construite par l'assemblage (ou consolidation) de l'ensemble des fichiers locaux publiés sur data.gouv.fr. 
+
+## Mise-à-jour
+
+La consolidation de la base sera effectuée en continu par transport.data.gouv.fr à partir des fichiers publiés sur data.gouv avec le tag "zfe" ou "zone-faibles-emissions" par les producteurs. De nouvelles versions seront publiées lorsque de nouvelles ZFE seront recensées ou mises-à-jour par les producteurs. Cette mise à jour se fait à partir du fichier communiqué précédemment et en reprenant, en les modifiant le cas échéant, les données existantes. Le fichier principal du dataset constitue ainsi systématiquement la dernière mise-à-jour.
+
+
+## Conditions d’utilisation
+
+Comme indiqué dans les métadonnées, le fichier et ses mises-à-jour sont distribués sous la Licence Ouverte Etalab 2.0. Cela signifie que vous pouvez télécharger librement cette base, la réutiliser, la modifier, l’utiliser commercialement, etc, tant que vous en mentionnez la source (par exemple dans les mentions légales de votre application).
+Nous tenons à remercier les membres du groupe de travail pour leur investissement dans l'élaboration de ce schéma.
+
+## Notes techniques pour contribuer à ce schéma
+
+Ce schéma s'appuie sur [TableSchema](https://specs.frictionlessdata.io/table-schema/). Pour le modifier, il peut être utile en particulier de se référer à la [spécification des descripteurs de champs](https://specs.frictionlessdata.io/table-schema/#field-descriptors).
+
+### Fichiers disponibles
 
 Ce dépôt contient un ensemble de fichiers utiles pour un dépôt d'un schéma [Table Schema](https://specs.frictionlessdata.io/table-schema/).
 
-- [`CHANGELOG.md`](CHANGELOG.md) contient la liste des changements entre les différentes versions de votre schéma ;
+- [`CHANGELOG.md`](CHANGELOG.md) contient la liste des changements entre les différentes versions du schéma ;
 - [`exemple-valide.csv`](exemple-valide.csv) est un fichier CSV d'exemple conforme par rapport au schéma décrit dans `schema.json`  ;
-- [`LICENSE.md`](LICENSE.md) est le fichier de licence du dépôt. Nous recommandons d'utiliser la [Licence Ouverte](https://www.etalab.gouv.fr/licence-ouverte-open-licence), cette licence est recommandée par l'administration française pour le partage de données et de documents ;
-- [`README.md`](README.md) est le fichier que vous lisez actuellement. À terme, il devra présenter votre schéma ;
-- [`requirements.txt`](requirements.txt) liste les dépendances Python nécessaires pour effectuer des tests en intégration continue sur votre dépôt ;
+- [`LICENSE.md`](LICENSE.md) est le fichier de licence du dépôt ;
+- [`README.md`](README.md) est le fichier que vous lisez actuellement ;
+- [`requirements.txt`](requirements.txt) liste les dépendances Python nécessaires pour effectuer des tests en intégration continue sur le dépôt ;
 - [`schema.json`](schema.json) est le schéma au format Table Schema.
 
 ### Intégration continue
@@ -25,14 +80,21 @@ Ce dépôt est configuré pour utiliser de l'intégration continue, si vous util
 - que votre schéma est valide à la spécification Table Schema ;
 - que vos fichiers d'exemples sont conformes au schéma.
 
-Si vous n'utilisez pas GitHub, vous pouvez lancer ces tests sur votre machine ou sur un autre service d'intégration continue comme Gitlab CI, Jenkins, Circle CI, Travis etc. Consultez la configuration utilisée dans [`.github/workflows/test.yml`](.github/workflows/test.yml).
+Vous pouvez consulter la configuration utilisée dans [`.github/workflows/test.yml`](.github/workflows/test.yml).
 
-Localement, voici la procédure à suivre pour installer l'environnement de test et lancer les tests :
+### Test en local
+
+Pour itérer plus facilement sur le schéma en local, il est possible de lancer les tests sur un poste de travail.
+
+Nous recommandons, pour installer la bonne version de Python, l'utilisation de [PyEnv](https://github.com/pyenv/pyenv) pour Mac/Linux et [pyenv-win](https://github.com/pyenv-win/pyenv-win) pour Windows.
+
+Voici la procédure à suivre pour installer l'environnement de test (sous Mac/Linux) et lancer les tests :
 
 ```bash
-# Création d'un environnement virtuel en Python 3
-python3 -m venv venv
-source venv/bin/activate
+# Installation de la version de Python en vigueur avec pyenv
+# voir https://github.com/pyenv/pyenv
+pyenv install
+python --version
 
 # Installation des dépendances
 pip install -r requirements.txt
@@ -44,21 +106,4 @@ frictionless validate --type schema schema.json
 frictionless validate --schema schema.json exemple-valide.csv
 ```
 
-## Étapes à suivre
 
-Nous détaillons ci-dessous les étapes que nous vous conseillons de suivre après avoir créé votre dépôt Git, tout en utilisant les fichiers d'exemples.
-
-- [ ] Décrire votre schéma dans le fichier `schema.json` en respectant la spécification Table Schema. Le fichier d'exemple comprend des valeurs d'exemples pour toutes les métadonnées possibles. Notez que les champs d'exemple ne comprennent qu'une petite partie des types, formats et contraintes disponibles, référez-vous à [la documentation](https://specs.frictionlessdata.io/table-schema/#types-and-formats) pour toutes les valeurs possibles. Si certaines métadonnées ne sont pas nécessaires pour votre projet, vous pouvez les supprimer. Pour vérifier que votre schéma est conforme, vous pouvez utiliser l'outil [tableschema](https://pypi.org/project/tableschema/) en ligne de commande : `tableschema validate schema.json`
-- [ ] Modifier le fichier d'exemple CSV avec des données conforme à votre schéma. L'outil [frictionless](https://pypi.org/project/frictionless/) permet de vérifier que vos fichiers sont conformes au schéma en ligne de commande `frictionless validate --schema schema.json exemple-valide.csv`
-- [ ] Modifier le fichier [`CHANGELOG.md`](CHANGELOG.md) pour indiquer la publication initiale
-- [ ] Modifier le fichier [`README.md`](README.md), en supprimant tout son contenu tout d'abord. Au sein de plusieurs paragraphes, vous indiquerez le contexte, les modalités de production des données, le cadre juridique, la finalité, les cas d’usage etc. Consultez plusieurs schémas sur [schema.data.gouv.fr](https://schema.data.gouv.fr) pour découvrir quelles informations sont pertinentes à indiquer
-- [ ] Vérifier que la licence ouverte vous convient. Si vous devez utiliser une autre licence, modifiez le fichier [`LICENSE.md`](LICENSE.md) et indiquez la licence dans le fichier [`schema.json`](schema.json), dans la clé `licenses`
-
-
-## Documentation
-
-Pour vous aider dans la construction de votre dépôt, nous vous recommandons de vous référer à :
-
-- [Le guide à destination des producteurs de schéma](https://guides.etalab.gouv.fr/producteurs-schemas/)
-- [La documentation de schema.data.gouv.fr](https://schema.data.gouv.fr)
-- [La spécification Table Schema](https://specs.frictionlessdata.io/table-schema/)
