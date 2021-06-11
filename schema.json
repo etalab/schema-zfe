@@ -1,16 +1,17 @@
 {
    "$schema":"https://specs.frictionlessdata.io/schemas/table-schema.json",
-   "name":"objets-importants",
-   "title":"Schéma des objets importants",
-   "description":"Spécification du fichier d'échange relatif aux objets importants gérés par les collectivités.",
+   "name":"zfe-regles",
+   "title":"Zones à Faibles Emissions - Règles",
+   "description":"Spécification du fichier décrivant la réglementation d'une Zone à Faible Emission.",
    "keywords":[
-      "objets",
-      "autre-tag"
+      "zfe",
+      "routes",
+      "mobilité",
+      "qualité de l'air"
    ],
    "countryCode":"FR",
-   "homepage":"https://github.com/mon-orga/schema-objets-importants",
-   "path":"https://github.com/mon-orga/schema-objets-importants/raw/v0.1.1/schema.json",
-   "image":"https://github.com/mon-orga/schema-objets-importants/raw/v0.1.1/irve.png",
+   "homepage":"https://github.com/etalab/schema-zfe-regles",
+   "path": "https://github.com/etalab/schema-zfe-regles/blob/master/schema.json",
    "licenses":[
       {
          "title":"Etalab Licence Ouverte 2.0",
@@ -22,71 +23,288 @@
       {
          "title":"Fichier valide (CSV)",
          "name":"exemple-valide-csv",
-         "path":"https://github.com/mon-orga/schema-objets-importants/raw/v0.1.1/exemple-valide.csv"
+         "path": "https://github.com/etalab/schema-zfe-regles/blob/master/exemple-valide.csv"
       }
    ],
-   "sources":[
-      {
-         "title":"Arrêté du 12 janvier 2017 relatif aux objets importants",
-         "path":"https://beta.legifrance.gouv.fr/codes/id/LEGISCTA000031367685/2020-05-25"
-      }
-   ],
-   "created":"2018-06-29",
-   "lastModified":"2019-05-06",
-   "version":"0.1.1",
+   "created":"2021-02-01",
+   "lastModified":"2021-06-08",
+   "version":"0.6.1",
    "contributors":[
       {
-         "title":"John Smith",
-         "email":"john.smith@etalab.gouv.fr",
-         "organisation":"Etalab",
-         "role":"author"
+         "title": "Nicolas Berthelot",
+         "email": "contact@transport.beta.gouv.fr",
+         "organisation": "transport.data.gouv.fr",
+         "role": "author"
       },
       {
-         "title":"Jane Doe",
-         "email":"jane.doe@example.com",
-         "organisation":"Association très importante",
-         "role":"contributor"
+         "title": "Miryad Ali",
+         "email": "miryad.ali@beta.gouv.fr",
+         "organisation": "transport.data.gouv.fr",
+         "role": "contributor"
+      },
+      {
+         "title": "Francis Chabouis",
+         "email": "francis.chabouis@beta.gouv.fr",
+         "organisation": "transport.data.gouv.fr",
+         "role": "contributor"
+      },
+      {
+         "title": "Thibaut Barrère",
+         "email": "thibaut.barrere@beta.gouv.fr",
+         "organisation": "transport.data.gouv.fr",
+         "role": "contributor"
+      },
+      {
+         "title": "Aline Batifol",
+         "organisation": "Mappy",
+         "role": "contributor"
+      },
+      {
+         "title": "Frédérick Petit",
+         "organisation": "Grenoble Alpes Métropole",
+         "role": "contributor"
+      },
+      {
+         "title": "Geoffrey Aldebert",
+         "organisation": "Etalab",
+         "role": "contributor"
+      },
+      {
+         "title": "Mélanie Gidel",
+         "organisation": "Ville de Paris",
+         "role": "contributor"
+      },
+      {
+         "title": "Cindie Andrieu-Dupin",
+         "organisation": "DRIEAT Île-de-France",
+         "role": "contributor"
+      },
+      {
+         "title": "Patrick Pigache",
+         "role": "contributor"
+      },
+      {
+         "title": "Gaël Pognonec",
+         "organisation": "GRT Gaz",
+         "role": "contributor"
+      },
+      {
+         "title": "Martin Burgat",
+         "organisation": "TomTom",
+         "role": "contributor"
+      },
+      {
+         "title": "Jérôme Olivet",
+         "organisation": "DREAL Occitanie",
+         "role": "contributor"
+      },
+      {
+         "title": "Xavier Bourat",
+         "organisation": "Total",
+         "role": "contributor"
+      },
+      {
+         "title": "Jérémy Bourreau",
+         "organisation": "Métropole de Lyon",
+         "role": "contributor"
+      },
+      {
+         "title": "Aurélie Bayol",
+         "organisation": "Toulouse Métropole",
+         "role": "contributor"
+      },
+      {
+         "title": "Jérémy Courel",
+         "organisation": "Institut Paris Région",
+         "role": "contributor"
+      },
+      {
+         "title": "Priscilla Zachée",
+         "organisation": "TomTom",
+         "role": "contributor"
+      },
+      {
+         "title": "Nicolas Madignier",
+         "organisation": "Grand Poitiers",
+         "role": "contributor"
+      },
+      {
+         "title": "Renan Perault",
+         "organisation": "Cerema",
+         "role": "contributor"
       }
    ],
    "fields":[
       {
          "name":"id",
-         "description":"Un identifiant unique de l'objet.",
-         "example":"42",
-         "type":"integer",
-         "constraints":{
-            "required":true,
-            "minimum":1
-         }
-      },
-      {
-         "name":"date_creation",
-         "description":"La date de création de l'objet, au format ISO 8601 AAAA-MM-DD.",
-         "example":"2020-02-27",
-         "type":"date",
-         "constraints":{
-            "required":true
-         }
-      },
-      {
-         "name":"nom",
-         "description":"Le nom de l'objet.",
-         "example":"Brouette",
+         "description":"Identifiant unique de la règle. Pour construire l'identifiant on utilise cette formule : 'Code SIREN de l'entité administrative englobant la zone' - ZFE - XXX",
+         "example":"200046977-ZFE-001",
          "type":"string",
          "constraints":{
             "required":true
          }
       },
       {
-         "name":"classification",
-         "description":"Classification de l'objet.",
-         "example":"Classification A",
-         "type":"array",
-         "arrayItem":{
-            "type": "string",
-            "constraints": {
-               "enum": ["Classification A", "Classification B", "Classification C"]
-            }
+         "name":"nom_zone",
+         "description":"Nom de la zone associée à la règle (idéalement nom repris pas les éléments de communication de la ZFE",
+         "example":"Intra-muros",
+         "type":"string",
+         "constraints":{
+            "required":false
+         }
+      },
+      {
+         "name":"date_debut",
+         "description":"Date d'entrée en vigueur de la réglementation",
+         "example":"2019-07-01",
+         "type":"date",
+         "constraints":{
+            "required":true
+         }
+      },
+      {
+         "name":"date_fin",
+         "description":"Date de fin de la réglementation",
+         "example":"2023-07-01",
+         "type":"date",
+         "constraints":{
+            "required":false
+         }
+      },
+      {
+         "name":"proprietaire_vehicule",
+         "description":"Nature juridique du propriétaire du véhicule",
+         "example":"PERSONNE PHYSIQUE OU MORALE",
+         "type":"date",
+         "constraints":{
+            "required":true,
+            "enum": ["PERSONNE PHYSIQUE", "PERSONNE MORALE", "PERSONNE PHYSIQUE OU MORALE"]
+         }
+      },
+      {
+         "name":"vp_critair",
+         "description":"Véhicules particuliers : Vignette CRITAIR à partir de laquelle la circulation n'est pas autorisée. Par exemple 4 signifie que les véhicules CRITAIR 4, CRITAIR 5 et sans vignettes ne sont pas autorisés à circuler.",
+         "example":"4",
+         "type":"string",
+         "constraints":{
+            "required":false
+         }
+      },
+      {
+         "name":"vp_horaires",
+         "description":"Véhicules particuliers : jours et horaires de restriction au format 'opening hours' d'OpenStreetMap : https://wiki.openstreetmap.org/wiki/Key:opening_hours",
+         "example":"Mo-Fr 08:00-20:00; PH off",
+         "type":"string",
+         "constraints":{
+            "required":false
+         }
+      },
+      {
+         "name":"vul_critair",
+         "description":"Véhicules utilitaires légerts : Vignette CRITAIR à partir de laquelle la circulation n'est pas autorisée. Par exemple 4 signifie que les véhicules CRITAIR 4, CRITAIR 5 et sans vignettes ne sont pas autorisés à circuler.",
+         "example":"4",
+         "type":"string",
+         "constraints":{
+            "required":false
+         }
+      },
+      {
+         "name":"vul_horaires",
+         "description":"Véhicules utilitaires légers : jours et horaires de restriction au format 'opening hours' d'OpenStreetMap : https://wiki.openstreetmap.org/wiki/Key:opening_hours",
+         "example":"Mo-Fr 08:00-20:00; PH off",
+         "type":"string",
+         "constraints":{
+            "required":false
+         }
+      },
+      {
+         "name":"pl_critair",
+         "description":"Poids lourds : Vignette CRITAIR à partir de laquelle la circulation n'est pas autorisée. Par exemple 4 signifie que les véhicules CRITAIR 4, CRITAIR 5 et sans vignettes ne sont pas autorisés à circuler.",
+         "example":"4",
+         "type":"string",
+         "constraints":{
+            "required":false
+         }
+      },
+      {
+         "name":"pl_horaires",
+         "description":"Poids lourds : jours et horaires de restriction au format 'opening hours' d'OpenStreetMap : https://wiki.openstreetmap.org/wiki/Key:opening_hours",
+         "example":"Mo-Fr 08:00-20:00; PH off",
+         "type":"string",
+         "constraints":{
+            "required":false
+         }
+      },
+      {
+         "name":"autobus_autocars_critair",
+         "description":"Autobus et autocars : Vignette CRITAIR à partir de laquelle la circulation n'est pas autorisée. Par exemple 4 signifie que les véhicules CRITAIR 4, CRITAIR 5 et sans vignettes ne sont pas autorisés à circuler.",
+         "example":"4",
+         "type":"string",
+         "constraints":{
+            "required":false
+         }
+      },
+      {
+         "name":"autobus_autocars_horaires",
+         "description":"Autobus et autocars : jours et horaires de restriction au format 'opening hours' d'OpenStreetMap : https://wiki.openstreetmap.org/wiki/Key:opening_hours",
+         "example":"Mo-Fr 08:00-20:00; PH off",
+         "type":"string",
+         "constraints":{
+            "required":false
+         }
+      },
+      {
+         "name":"deux_rm_critair",
+         "description":"Deux roues, tricycles et quadricycles à moteur : Vignette CRITAIR à partir de laquelle la circulation n'est pas autorisée. Par exemple 4 signifie que les véhicules CRITAIR 4, CRITAIR 5 et sans vignettes ne sont pas autorisés à circuler.",
+         "example":"4",
+         "type":"string",
+         "constraints":{
+            "required":false
+         }
+      },
+      {
+         "name":"deux_rm_horaires",
+         "description":"Deux roues, tricycles et quadricycles à moteur : jours et horaires de restriction au format 'opening hours' d'OpenStreetMap : https://wiki.openstreetmap.org/wiki/Key:opening_hours",
+         "example":"Mo-Fr 08:00-20:00; PH off",
+         "type":"string",
+         "constraints":{
+            "required":false
+         }
+      },
+      {
+         "name":"taxi_critair",
+         "description":"Taxis : Vignette CRITAIR à partir de laquelle la circulation n'est pas autorisée. Par exemple 4 signifie que les véhicules CRITAIR 4, CRITAIR 5 et sans vignettes ne sont pas autorisés à circuler.",
+         "example":"4",
+         "type":"string",
+         "constraints":{
+            "required":false
+         }
+      },
+      {
+         "name":"taxi_horaires",
+         "description":"Taxis : jours et horaires de restriction au format 'opening hours' d'OpenStreetMap : https://wiki.openstreetmap.org/wiki/Key:opening_hours",
+         "example":"Mo-Fr 08:00-20:00; PH off",
+         "type":"string",
+         "constraints":{
+            "required":false
+         }
+      },
+      {
+         "name":"url_arrete",
+         "description":"Lien de l'arrêté administratif",
+         "example":"https://cdn.paris.fr/paris/2021/05/28/23fb2b69cfa451a4e517f1bc6e3001b7.pdf",
+         "type":"uri",
+         "constraints":{
+            "required":false
+         }
+      },
+      {
+         "name":"url_site_information",
+         "description":"Page web décrivant le dispositif",
+         "example":"https://www.metropolegrandparis.fr/fr/ZFE",
+         "type":"uri",
+         "constraints":{
+               "required":false
          }
       }
    ],

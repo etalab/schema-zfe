@@ -1,4 +1,2 @@
-id,date_creation,nom,classification
-42,2020-02-27,Brouette,"[""Classification A""]"
-44,2020-02-25,Pelle,"[""Classification A"",""Classification B"",""Classification C""]"
-45,2020-02-25,Bus,"[""Classification A"",""Classification C""]"
+id,nom_zone,date_debut,date_fin,proprietaire_vehicule,vp_critair,vp_horaires,vul_critair,vul_horaires,pl_critair,pl_horaires,autobus_autocars__critair,autobus_autocars__horaires,deux_rm_critair,deux_rm_horaires,taxi_critair,taxi_horaires,url_arrete,url_site_information
+200046977-ZFE-001,Intra-muros,2019-07-01,2023-07-01,PERSONNE PHYSIQUE OU MORALE,4,Mo-Fr 08:00-20:00; PH off,4,Mo-Fr 08:00-20:00; PH off,4,Mo-Fr 08:00-20:00; PH off,4,Mo-Fr 08:00-20:00; PH off,4,Mo-Fr 08:00-20:00; PH off,4,Mo-Fr 08:00-20:00; PH off,https://cdn.paris.fr/paris/2021/05/28/23fb2b69cfa451a4e517f1bc6e3001b7.pdf,https://www.metropolegrandparis.fr/fr/ZFE
