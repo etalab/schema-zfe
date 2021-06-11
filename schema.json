@@ -175,7 +175,7 @@
          "name":"proprietaire_vehicule",
          "description":"Nature juridique du propriétaire du véhicule",
          "example":"PERSONNE PHYSIQUE OU MORALE",
-         "type":"date",
+         "type":"string",
          "constraints":{
             "required":true,
             "enum": ["PERSONNE PHYSIQUE", "PERSONNE MORALE", "PERSONNE PHYSIQUE OU MORALE"]
