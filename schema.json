@@ -31,14 +31,14 @@
                 "description": "Date d'entrée en vigueur de la réglementation",
                 "examples": [
                   "2019-07-01"
-                ],
+                ]
               },
               "date_fin": {
                 "type": "string",
                 "description": "Date de fin de la réglementation",
                 "examples": [
                   "2023-07-01"
-                ],
+                ]
               },
               "proprietaire_vehicule": {
                 "type": "string",
