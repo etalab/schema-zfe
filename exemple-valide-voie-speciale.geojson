@@ -1,0 +1,285 @@
+{
+   "type":"FeatureCollection",
+   "name":"zone-a-faibles-emissions-voie-spe",
+   "crs":{
+      "type":"name",
+      "properties":{
+         "name":"urn:ogc:def:crs:OGC:1.3:CRS84"
+      }
+   },
+   "features":[
+      {
+         "type":"Feature",
+         "properties":{
+            "id":"TRONROUT0000000000176896",
+            "date_debut":"2019-07-01",
+            "date_fin":"2023-07-01",
+            "proprietaire_vehicule":"PERSONNE PHYSIQUE OU MORALE",
+            "vp_critair":"4",
+            "vp_horaires":"Mo-Fr 08:00-20:00; PH off",
+            "vul_critair":"4",
+            "vul_horaires":"Mo-Fr 08:00-20:00; PH off",
+            "pl_critair":"4",
+            "pl_horaires":"Mo-Fr 08:00-20:00; PH off",
+            "autobus_autocars_critair":"4",
+            "autobus_autocars_horaires":"Mo-Fr 08:00-20:00; PH off",
+            "deux_rm_critair":"4",
+            "deux_rm_horaires":"Mo-Fr 08:00-20:00; PH off",
+            "taxi_critair":"4",
+            "taxi_horaires":"Mo-Fr 08:00-20:00; PH off",
+            "url_arrete":"https://cdn.paris.fr/paris/2021/05/28/23fb2b69cfa451a4e517f1bc6e3001b7.pdf",
+            "url_site":"https://www.metropolegrandparis.fr/fr/ZFE"
+         },
+         "geometry":{
+            "type":"LineString",
+            "coordinates":[
+               [
+                  2.344756392565412,
+                  48.901059771759087,
+                  50.9
+               ],
+               [
+                  2.343486744715598,
+                  48.901033933276416,
+                  52.3
+               ]
+            ]
+         }
+      },
+      {
+         "type":"Feature",
+         "properties":{
+            "id":"TRONROUT0000000000176893",
+            "date_debut":"2019-07-01",
+            "date_fin":"2023-07-01",
+            "proprietaire_vehicule":"PERSONNE PHYSIQUE OU MORALE",
+            "vp_critair":"4",
+            "vp_horaires":"Mo-Fr 08:00-20:00; PH off",
+            "vul_critair":"4",
+            "vul_horaires":"Mo-Fr 08:00-20:00; PH off",
+            "pl_critair":"4",
+            "pl_horaires":"Mo-Fr 08:00-20:00; PH off",
+            "autobus_autocars_critair":"4",
+            "autobus_autocars_horaires":"Mo-Fr 08:00-20:00; PH off",
+            "deux_rm_critair":"4",
+            "deux_rm_horaires":"Mo-Fr 08:00-20:00; PH off",
+            "taxi_critair":"4",
+            "taxi_horaires":"Mo-Fr 08:00-20:00; PH off",
+            "url_arrete":"https://cdn.paris.fr/paris/2021/05/28/23fb2b69cfa451a4e517f1bc6e3001b7.pdf",
+            "url_site":"https://www.metropolegrandparis.fr/fr/ZFE"
+         },
+         "geometry":{
+            "type":"LineString",
+            "coordinates":[
+               [
+                  2.347820687176221,
+                  48.901125959356861,
+                  47.7
+               ],
+               [
+                  2.346996997726074,
+                  48.901107981549025,
+                  47.7
+               ],
+               [
+                  2.346241509012153,
+                  48.901090370366333,
+                  47.5
+               ],
+               [
+                  2.345509174938929,
+                  48.901075578895103,
+                  50.3
+               ],
+               [
+                  2.344756392565412,
+                  48.901059771759087,
+                  50.9
+               ]
+            ]
+         }
+      },
+      {
+         "type":"Feature",
+         "properties":{
+            "id":"TRONROUT0000000000176882",
+            "date_debut":"2019-07-01",
+            "date_fin":"2023-07-01",
+            "proprietaire_vehicule":"PERSONNE PHYSIQUE OU MORALE",
+            "vp_critair":"4",
+            "vp_horaires":"Mo-Fr 08:00-20:00; PH off",
+            "vul_critair":"4",
+            "vul_horaires":"Mo-Fr 08:00-20:00; PH off",
+            "pl_critair":"4",
+            "pl_horaires":"Mo-Fr 08:00-20:00; PH off",
+            "autobus_autocars_critair":"4",
+            "autobus_autocars_horaires":"Mo-Fr 08:00-20:00; PH off",
+            "deux_rm_critair":"4",
+            "deux_rm_horaires":"Mo-Fr 08:00-20:00; PH off",
+            "taxi_critair":"4",
+            "taxi_horaires":"Mo-Fr 08:00-20:00; PH off",
+            "url_arrete":"https://cdn.paris.fr/paris/2021/05/28/23fb2b69cfa451a4e517f1bc6e3001b7.pdf",
+            "url_site":"https://www.metropolegrandparis.fr/fr/ZFE"
+         },
+         "geometry":{
+            "type":"LineString",
+            "coordinates":[
+               [
+                  2.351768709214582,
+                  48.901209445209567,
+                  52.9
+               ],
+               [
+                  2.351247792951466,
+                  48.901195832924124,
+                  51.9
+               ],
+               [
+                  2.350994121321393,
+                  48.901191760650747,
+                  51.6
+               ],
+               [
+                  2.349972682540843,
+                  48.901170033645791,
+                  50.2
+               ],
+               [
+                  2.34925263357813,
+                  48.90115443243635,
+                  49.2
+               ],
+               [
+                  2.348708474184622,
+                  48.901145179384827,
+                  48.6
+               ],
+               [
+                  2.347820687176221,
+                  48.901125959356861,
+                  47.7
+               ]
+            ]
+         }
+      },
+      {
+         "type":"Feature",
+         "properties":{
+            "id":"TRONROUT0000000000176879",
+
+            "date_debut":"2019-07-01",
+            "date_fin":"2023-07-01",
+            "proprietaire_vehicule":"PERSONNE PHYSIQUE OU MORALE",
+            "vp_critair":"4",
+            "vp_horaires":"Mo-Fr 08:00-20:00; PH off",
+            "vul_critair":"4",
+            "vul_horaires":"Mo-Fr 08:00-20:00; PH off",
+            "pl_critair":"4",
+            "pl_horaires":"Mo-Fr 08:00-20:00; PH off",
+            "autobus_autocars_critair":"4",
+            "autobus_autocars_horaires":"Mo-Fr 08:00-20:00; PH off",
+            "deux_rm_critair":"4",
+            "deux_rm_horaires":"Mo-Fr 08:00-20:00; PH off",
+            "taxi_critair":"4",
+            "taxi_horaires":"Mo-Fr 08:00-20:00; PH off",
+            "url_arrete":"https://cdn.paris.fr/paris/2021/05/28/23fb2b69cfa451a4e517f1bc6e3001b7.pdf",
+            "url_site":"https://www.metropolegrandparis.fr/fr/ZFE"
+         },
+         "geometry":{
+            "type":"LineString",
+            "coordinates":[
+               [
+                  2.355161281072934,
+                  48.901094660348591,
+                  55.6
+               ],
+               [
+                  2.354968778128117,
+                  48.901108012787105,
+                  55.4
+               ],
+               [
+                  2.354621986399182,
+                  48.901133124031745,
+                  55.5
+               ],
+               [
+                  2.354373458552803,
+                  48.901154267441463,
+                  55.5
+               ],
+               [
+                  2.354190525543134,
+                  48.901165871588709,
+                  55.5
+               ],
+               [
+                  2.35405673016987,
+                  48.901175042533978,
+                  55.5
+               ],
+               [
+                  2.353922957070782,
+                  48.901182414820923,
+                  55.5
+               ],
+               [
+                  2.353797345650348,
+                  48.901191629623611,
+                  55.4
+               ],
+               [
+                  2.35364448753583,
+                  48.901197999312409,
+                  55.4
+               ],
+               [
+                  2.353484798178817,
+                  48.901205231246003,
+                  55.0
+               ],
+               [
+                  2.353383828122784,
+                  48.901207384110172,
+                  54.3
+               ],
+               [
+                  2.353261011594598,
+                  48.901211217552294,
+                  54.8
+               ],
+               [
+                  2.353086340409481,
+                  48.901216569424776,
+                  54.8
+               ],
+               [
+                  2.352949906115513,
+                  48.901218530363877,
+                  54.0
+               ],
+               [
+                  2.352696155968733,
+                  48.901220756475453,
+                  53.7
+               ],
+               [
+                  2.352509275733851,
+                  48.901220645632989,
+                  53.2
+               ],
+               [
+                  2.352345594817453,
+                  48.901219760637197,
+                  52.9
+               ],
+               [
+                  2.351768709214582,
+                  48.901209445209567,
+                  52.9
+               ]
+            ]
+         }
+      }
+   ]
+}

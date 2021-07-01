@@ -1,12 +1,12 @@
-# Schéma de données pour le Zones à Faibles Emissions - Table des règles
+# Schéma de données pour les Zones à Faibles Emissions
 
-Schéma des Zones à Faibles Emissions. Ce schéma permet de modéliser les règles de circulation associées à ensemble de tronçons routiers décrits dans les données sous le format "Zones à Faibles Emission - Tronçons routiers".   
+Ce schéma permet de modéliser les règles de limitation de circulation sur une zone concernant différents types de véhicules (véhicules particuliers, utilitaires, poids lourds...). Il permet également de préciser des exceptions sur certains axes routiers ou la Zone à Faible Emission a des règles différentes.
 
 ## Contexte
 
 Dans le cadre des travaux de l’équipe du Point d’accès national et de la mise en oeuvre de l’ouverture des données pour améliorer l’information dont disposent les voyageurs, l’équipe de transport.data.gouv.fr propose une solution simple et structurée pour l’ouverture des données concernant les Zones à Faibles Emissions : la Base Nationale des Zones à Faibles Emissions (BNZFE). 
 
-Le schéma de la base de données a été co-construit avec des associations et entrperises du secteur du stationnement cyclable, les producteurs de données et les réutilisateurs. Deux ateliers ouverts (le 25/11/2020 et le 24/02/2021) ont permis sa production. (Il a été établi après une enquête et plusieurs réunions du groupe de travail). Aujourd’hui disponible en version 0.1.0, il sera mis-à-jour régulièrement.
+Le schéma de la base de données a été co-construit avec les collectivités, leurs services SIG et avec les futurs réutilisateurs de ces données. Des ateliers avec ces acteurs et un atelier ouvert (le 08/04/2021) ont permis sa production. Aujourd’hui disponible en version 0.6.0, il sera mis-à-jour régulièrement.
 
 ## Cadre juridique
 
@@ -16,21 +16,26 @@ L’ouverture des données sur les Zones à Faibles Emissions est une obligation
 
 Afin de faciliter l’intégration des informations relatives aux Zones à Faibles Emission dans des applications de mobilité, un schéma de données a été défini afin d’assurer une harmonisation de ces données sur l’ensemble du territoire. Ce schéma définit des informations indispensables et complémentaires à fournir par le producteur. Cette distinction a été mise en place pour ne pas pénaliser les petits producteurs de données, et définit un standard minimal de complétude des données. Il est toutefois demandé aux producteurs de données de compléter le schéma avec le plus grand niveau de détail possible, afin de transmettre une information plus riche à l’usager final.
 La base présente plusieurs cas d’usage :
-Elle recense l'ensemble des Zones à Faibles Emission du territoire français en permettant à des services de calcul d’itinéraire d’intégrer ces données pour indiquer aux automobilistes s'ils peuvent circuler ou non sur certains tronçons routiers. Ces données peuvent également être utilisés par observatoires nationaux ou européens de l'implémentation de ce dispositif visant à améliorer la qualité de l'air des noeuds urbains.
-La talbe des règles comprend notamment : 
-- l'identifiant d'une catégorie de règle relative à un ensemble de tronçons routiers ;
-- la date de mise en place du dispositif et la date à laquelle la règlementation prend fin
-- la catégorie de conducteurs concernée par le dispositif (personne morale et/ou physique)
-- les vignettes CRITAIR autorisées par type de véhicule (véhicule particuliers, utiliraires, poids lourds, autobus, deux roues, taxis...)
-- les horaires d'application par type de véhicules (véhicule particuliers, utiliraires, poids lourds, autobus, deux roues, taxis...)
+Elle recense l'ensemble des Zones à Faibles Emission du territoire français en permettant à des services de calcul d’itinéraire d’intégrer ces données pour indiquer aux automobilistes s'ils peuvent circuler ou non sur certains tronçons routiers. Ces données peuvent également être utilisés par des observatoires nationaux ou européens de l'implémentation de ce dispositif visant à améliorer la qualité de l'air des noeuds urbains.
+Le fichier précise notamment : 
+- l'identifiant d'une aire concernée par une réglementation ZFE ou l'identifiant d'un tronçon routier concerné par une règle exceptionnelle ;
+- la date de mise en place du dispositif et la date à laquelle la règlementation prend fin ;
+- la catégorie de conducteurs concernée par le dispositif (personne morale et/ou physique) ;
+- les vignettes CRITAIR autorisées par type de véhicule (véhicule particuliers, utiliraires, poids lourds, autobus, deux roues, taxis...) ;
+- les horaires d'application par type de véhicules (véhicule particuliers, utiliraires, poids lourds, autobus, deux roues, taxis...) ;
 - l'arrêté associé ;
 - le site d'information associé à la réglementation.
 
 
 ## Format de fichier
 
-Les jeux de données seront publiées au format CSV encodé en UTF8 avec séparateur "," et en utilisant des " " pour les champs textuels qui pourraient contenir le séparateur. Certains champs sont obligatoires et d'autres optionnels. Les champs obligatoires doivent être complétés. Les champs optionnels peuvent être vides si la donnée n’est pas disponible. La colonne doit toutefois être présente.
-Ce jeu de données sera utilisé en combinaison avec le fichier contenant les géométrie des tronçons routiers concernés par la ZFE.
+Les jeux de données seront publiés au format GeoJSON encodé en UTF8. Certains champs sont obligatoires et d'autres optionnels. Les champs obligatoires doivent être complétés. Les champs optionnels peuvent être vides si la donnée n’est pas disponible. La colonne doit toutefois être présente.
+Ce schéma de données permet de produire un fichier décrivant les aires réglementées et un second fichier optionnel décrivant les tronçons routiers spéciaux. Leur articulation est expliquée dans la partie Mode d'emploi.
+
+## Référentiel géographique
+
+Le référentiel à suivre pour la production des données est le Référentiel Grande Echelle de l'IGN. Le système de projection retenu est le WGS84 comme le recommande le standard GeoJSON. 
+Les tronçons routiers exceptionnels doivent être extraits de la couche TRONCON_DE_ROUTE de la BD Topo de l'IGN. Si cela présente des difficultés merci de contacter contact@transport.beta.gouv.fr
 
 ## Publication
 
@@ -46,12 +51,15 @@ En cas de mise à jour d’un fichier déjà intégré à la base consolidée, i
 
 ## Consolidation
 
-Le base nationale des ZFE sera construite par l'assemblage (ou consolidation) de l'ensemble des fichiers locaux publiés sur data.gouv.fr. 
+Le base nationale des ZFE sera construite par l'assemblage (ou consolidation) de l'ensemble des fichiers locaux publiés sur data.gouv.fr. Deux fichiers seront publiés : un premier décrivant les aires concernées par une Zone à Fiable Emission et un second décrivant les voies spéciales dont les règles sont différentes.
 
 ## Mise-à-jour
 
 La consolidation de la base sera effectuée en continu par transport.data.gouv.fr à partir des fichiers publiés sur data.gouv avec le tag "zfe" ou "zone-faibles-emissions" par les producteurs. De nouvelles versions seront publiées lorsque de nouvelles ZFE seront recensées ou mises-à-jour par les producteurs. Cette mise à jour se fait à partir du fichier communiqué précédemment et en reprenant, en les modifiant le cas échéant, les données existantes. Le fichier principal du dataset constitue ainsi systématiquement la dernière mise-à-jour.
 
+## Mode d'emploi
+
+Comme expliqué ce schéma de données permet de décrire des aires réglementées et des voies exceptionnelles dont les règles sont différentes des zones dont elles font pourtant partie. Les règles affectant les tronçons routiers priment donc sur les règles affectant une zone. 
 
 ## Conditions d’utilisation
 
@@ -67,7 +75,8 @@ Ce schéma s'appuie sur [TableSchema](https://specs.frictionlessdata.io/table-sc
 Ce dépôt contient un ensemble de fichiers utiles pour un dépôt d'un schéma [Table Schema](https://specs.frictionlessdata.io/table-schema/).
 
 - [`CHANGELOG.md`](CHANGELOG.md) contient la liste des changements entre les différentes versions du schéma ;
-- [`exemple-valide.csv`](exemple-valide.csv) est un fichier CSV d'exemple conforme par rapport au schéma décrit dans `schema.json`  ;
+- [`exemple-valide-zone.geojson`](exemple-valide-zone.geojson) est un fichier GeoJSON d'exemple conforme décrivant une aire par rapport au schéma décrit dans `schema.json`  ;
+- [`exemple-valide-voie-speciale.geojson`](exemple-valide-voie-speciale.geojson) est un fichier GeoJSON d'exemple conforme décrivant une voie spéciale par rapport au schéma décrit dans `schema.json` ;
 - [`LICENSE.md`](LICENSE.md) est le fichier de licence du dépôt ;
 - [`README.md`](README.md) est le fichier que vous lisez actuellement ;
 - [`requirements.txt`](requirements.txt) liste les dépendances Python nécessaires pour effectuer des tests en intégration continue sur le dépôt ;
@@ -81,29 +90,5 @@ Ce dépôt est configuré pour utiliser de l'intégration continue, si vous util
 - que vos fichiers d'exemples sont conformes au schéma.
 
 Vous pouvez consulter la configuration utilisée dans [`.github/workflows/test.yml`](.github/workflows/test.yml).
-
-### Test en local
-
-Pour itérer plus facilement sur le schéma en local, il est possible de lancer les tests sur un poste de travail.
-
-Nous recommandons, pour installer la bonne version de Python, l'utilisation de [PyEnv](https://github.com/pyenv/pyenv) pour Mac/Linux et [pyenv-win](https://github.com/pyenv-win/pyenv-win) pour Windows.
-
-Voici la procédure à suivre pour installer l'environnement de test (sous Mac/Linux) et lancer les tests :
-
-```bash
-# Installation de la version de Python en vigueur avec pyenv
-# voir https://github.com/pyenv/pyenv
-pyenv install
-python --version
-
-# Installation des dépendances
-pip install -r requirements.txt
-
-# Test de la validité du schéma
-frictionless validate --type schema schema.json
-
-# Test de la conformité des fichiers d'exemples
-frictionless validate --schema schema.json exemple-valide.csv
-```
 
 
