@@ -15,8 +15,10 @@ L’ouverture des données sur les Zones à Faibles Emissions est une obligation
 ## Finalité
 
 Afin de faciliter l’intégration des informations relatives aux Zones à Faibles Emission dans des applications de mobilité, un schéma de données a été défini afin d’assurer une harmonisation de ces données sur l’ensemble du territoire. Ce schéma définit des informations indispensables et complémentaires à fournir par le producteur. Cette distinction a été mise en place pour ne pas pénaliser les petits producteurs de données, et définit un standard minimal de complétude des données. Il est toutefois demandé aux producteurs de données de compléter le schéma avec le plus grand niveau de détail possible, afin de transmettre une information plus riche à l’usager final.
-La base présente plusieurs cas d’usage :
-Elle recense l'ensemble des Zones à Faibles Emission du territoire français en permettant à des services de calcul d’itinéraire d’intégrer ces données pour indiquer aux automobilistes s'ils peuvent circuler ou non sur certains tronçons routiers. Ces données peuvent également être utilisés par des observatoires nationaux ou européens de l'implémentation de ce dispositif visant à améliorer la qualité de l'air des noeuds urbains.
+La base présente plusieurs cas d’usage 
+- elle recense l'ensemble des Zones à Faibles Emission du territoire français en permettant à des services de calcul d’itinéraire d’intégrer ces données pour indiquer aux automobilistes s'ils peuvent circuler ou non sur certains tronçons routiers. 
+- les données peuvent également être utilisées par des observatoires nationaux ou européens de l'implémentation de ce dispositif visant à améliorer la qualité de l'air des noeuds urbains.
+
 Le fichier précise notamment : 
 - l'identifiant d'une aire concernée par une réglementation ZFE ou l'identifiant d'un tronçon routier concerné par une règle exceptionnelle ;
 - la date de mise en place du dispositif et la date à laquelle la règlementation prend fin ;
@@ -45,7 +47,8 @@ Les producteurs pourront :
 - publier directement sur data.gouv.fr ;
 - publier sur un portail local ou régional et s'assurer que les données publiées sont bien moissonnées et référencées sur data.gouv.fr.
 
-Nous préconisons aux producteurs de données de publier leurs fichiers avec la règle de nommage suivante : zfe_regles_nom.csv avec nom étant le nom de la collectivité productrice des données, par exemple zfe_regles_grenoble.csv
+Nous préconisons aux producteurs de données de publier leurs fichiers cocnernant les zones avec la règle de nommage suivante : zfe_zone_nom.geojson avec nom étant le nom de la collectivité productrice des données, par exemple zfe_zone_grenoble.geojson. 
+Pour les fichiers concernant les voies spéciales : zfe_voie_speciale_nom.geojson, avec nom étant le nom de la collectivité productrice des données, par exemple zfe_voie_speciale_grenoble.geojson. 
 
 En cas de mise à jour d’un fichier déjà intégré à la base consolidée, il est recommandé de prévenir l’équipe transport.data.gouv.fr qui s’assurera de l'actualisation du fichier en question et de son intégration dans la base consolidée.
 
