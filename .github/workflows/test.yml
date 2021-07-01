@@ -31,7 +31,7 @@ jobs:
           ${{ runner.os }}-pip-
           ${{ runner.os }}-
     - name: Installation des dépendances
-      run: pip install jsonschema
+      run: pip install -r requirements.txt
     - name: Vérification du schéma et des fichiers d'exemples
       run: |
         jsonschema --instance exemple-valide-zone.geojson schema.json
