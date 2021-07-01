@@ -47,8 +47,8 @@
                   "PERSONNE PHYSIQUE OU MORALE"
                 ],
                 "enum": [
-                  "PERSONNE PHYSIQUE", 
-                  "PERSONNE MORALE", 
+                  "PERSONNE PHYSIQUE",
+                  "PERSONNE MORALE",
                   "PERSONNE PHYSIQUE OU MORALE"
                 ]
               },
