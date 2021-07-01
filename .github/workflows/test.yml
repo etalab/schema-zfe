@@ -14,7 +14,7 @@ jobs:
       uses: docker://orrosenblatt/validate-json-action:latest
       env:
         INPUT_SCHEMA: schema.json
-        INPUT_JSONS: exemple-valide-zone.geojson,exemple-valide-voie-speciale.geojson
+        INPUT_JSONS: exemple-valide-zone.geojson
 
     # Install a python cli checker, `jsonschema` that have poor errors but can check that the example is a valid geojson
     # (unlike ajv it resolves the external geojson schema)
