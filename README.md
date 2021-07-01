@@ -75,7 +75,7 @@ Ce schéma s'appuie sur [TableSchema](https://specs.frictionlessdata.io/table-sc
 Ce dépôt contient un ensemble de fichiers utiles pour un dépôt d'un schéma [Table Schema](https://specs.frictionlessdata.io/table-schema/).
 
 - [`CHANGELOG.md`](CHANGELOG.md) contient la liste des changements entre les différentes versions du schéma ;
-- [`exemple-valide-aire.geojson`](exemple-valide-aire.geojson) est un fichier GeoJSON d'exemple conforme décrivant une aire par rapport au schéma décrit dans `schema.json`  ;
+- [`exemple-valide-zone.geojson`](exemple-valide-zone.geojson) est un fichier GeoJSON d'exemple conforme décrivant une aire par rapport au schéma décrit dans `schema.json`  ;
 - [`exemple-valide-voie-speciale.geojson`](exemple-valide-voie-speciale.geojson) est un fichier GeoJSON d'exemple conforme décrivant une voie spéciale par rapport au schéma décrit dans `schema.json` ;
 - [`LICENSE.md`](LICENSE.md) est le fichier de licence du dépôt ;
 - [`README.md`](README.md) est le fichier que vous lisez actuellement ;
@@ -90,30 +90,5 @@ Ce dépôt est configuré pour utiliser de l'intégration continue, si vous util
 - que vos fichiers d'exemples sont conformes au schéma.
 
 Vous pouvez consulter la configuration utilisée dans [`.github/workflows/test.yml`](.github/workflows/test.yml).
-
-### Test en local
-
-Pour itérer plus facilement sur le schéma en local, il est possible de lancer les tests sur un poste de travail.
-
-Nous recommandons, pour installer la bonne version de Python, l'utilisation de [PyEnv](https://github.com/pyenv/pyenv) pour Mac/Linux et [pyenv-win](https://github.com/pyenv-win/pyenv-win) pour Windows.
-
-Voici la procédure à suivre pour installer l'environnement de test (sous Mac/Linux) et lancer les tests :
-
-```bash
-# Installation de la version de Python en vigueur avec pyenv
-# voir https://github.com/pyenv/pyenv
-pyenv install
-python --version
-
-# Installation des dépendances
-pip install -r requirements.txt
-
-# Test de la validité du schéma
-frictionless validate --type schema schema.json
-
-# Test de la conformité des fichiers d'exemples
-frictionless validate --schema schema.json exemple-valide-aire.geojson
-frictionless validate --schema schema.json exemple-valide-voie-speciale.geojson
-```
 
 
