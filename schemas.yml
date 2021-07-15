@@ -1,8 +1,8 @@
 title: "Zone à Faibles Emissions"
 description : "Spécification du schéma de données des Zones à Faibles Emissions"
-homepage: "https://github.com/etalab/schema_zfe"
+homepage: "https://github.com/etalab/schema-zfe"
 
 schemas:
   -
     path: "schema.json"
-    title: "Zones à Faibles Emissions"
+    title: "Zone à Faibles Emissions"
