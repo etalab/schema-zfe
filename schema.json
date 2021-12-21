@@ -35,7 +35,7 @@
                 ]
               },
               "date_fin": {
-                "type": "string",
+                "type": ["string", "null"],
                 "format": "date",
                 "description": "Date de fin de la réglementation",
                 "examples": [

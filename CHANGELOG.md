@@ -2,6 +2,10 @@
 
 Ce fichier répertorie les changements entre différentes versions d'un schéma.
 
+## Version 0.7.2 - 2021-12-21
+
+- accepter la valeur `null` pour le champ `date_fin`
+
 ## Version 0.7.1 - 2021-10-18
 
 Adaptation du schéma pour :
