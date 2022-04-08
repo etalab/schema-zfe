@@ -186,8 +186,7 @@
             },
             "required": [
               "id",
-              "date_debut",
-              "url_arrete"
+              "date_debut"
             ],
             "dependentRequired": {
               "vp_critair": ["vp_horaires"],
