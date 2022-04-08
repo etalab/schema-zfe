@@ -2,6 +2,9 @@
 
 Ce fichier répertorie les changements entre différentes versions d'un schéma.
 
+## Version 0.8.1 - 2022-04-08
+- le champ "url_arrete" devient optionnel
+
 ## Version 0.7.2 - 2021-12-21
 
 - accepter la valeur `null` pour le champ `date_fin`
