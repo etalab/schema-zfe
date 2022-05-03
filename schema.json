@@ -188,7 +188,7 @@
               "id",
               "date_debut"
             ],
-            "dependentRequired": {
+            "dependencies": {
               "vp_critair": ["vp_horaires"],
               "vul_critair": ["vul_horaires"],
               "pl_critair": ["pl_horaires"],

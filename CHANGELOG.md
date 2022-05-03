@@ -2,8 +2,12 @@
 
 Ce fichier répertorie les changements entre différentes versions d'un schéma.
 
+## Version 0.8.2 - 2022-04-28
+
+- adaptation de la façon de vérifier la présence des paires de champs `*_critair` et `*_horaires` introduite dans la version 0.7.1
+
 ## Version 0.8.1 - 2022-04-08
-- le champ "url_arrete" devient optionnel
+- le champ `url_arrete` devient optionnel
 
 ## Version 0.7.2 - 2021-12-21
 
