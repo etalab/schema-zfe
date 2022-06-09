@@ -20,10 +20,10 @@
             "properties": {
               "id": {
                 "type": "string",
-                "description": "Identifiant unique de l'aire réglementée. Pour construire l'identifiant on utilise cette formule : 'Code SIREN de l'entité administrative englobant la zone' - ZFE - XXX. Identifiant unique cleabs du tronçon routier issu de la couche TRONCON_DE_ROUTE de la BD Topo produite par l'IGN",
+                "description": "Si l'objet est une aire réglementée : Identifiant unique de l'aire réglementée. Pour construire l'identifiant on utilise cette formule : 'Code SIREN de l'entité administrative englobant la zone' - ZFE - XXX. Si l'objet est une voie spéciale : Identifiant unique cleabs du tronçon routier issu de la couche TRONCON_DE_ROUTE de la BD Topo produite par l'IGN",
                 "examples": [
-                  "200046977-ZFE-001",
-                  "TRONROUT0000002003832789"
+                  "Pour une aire réglementée : 200046977-ZFE-001, 200046977-ZFE-002 ",
+                  "Pour une voie spéciale : TRONROUT0000002003832789"
                 ]
               },
               "date_debut": {
